@@ -42,15 +42,8 @@ public class ConnectionThreadObject extends ConnectionThread<ConnectionThreadObj
     }
 
     @Override
-    public void sendData(IDataDTO iDataDTO)
+    public void sendData(IDataDTO iDataDTO) throws IOException
     {
-        try
-        {
             this._objectOutputStream.writeObject(iDataDTO);
-        }
-        catch (IOException exception)
-        {
-            exception.printStackTrace();
-        }
     }
 }

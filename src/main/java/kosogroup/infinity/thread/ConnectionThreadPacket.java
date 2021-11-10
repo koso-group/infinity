@@ -54,21 +54,16 @@ public class ConnectionThreadPacket extends ConnectionThread<ConnectionThreadPac
     }
 
     @Override
-    public void sendData(IDataDTO iDataDTO)
+    public void sendData(IDataDTO iDataDTO) throws IOException
     {
         PacketDTO iPacketDTO = (PacketDTO) iDataDTO;
 
-        try
-        {
+
             this._outputStream.write(iPacketDTO._magic);
             this._outputStream.write(iPacketDTO._length);
             this._outputStream.write(iPacketDTO._nn);
             this._outputStream.write(iPacketDTO._content);
             this._outputStream.flush();
-        }
-        catch (IOException exception)
-        {
-            exception.printStackTrace();
-        }
+
     }
 }

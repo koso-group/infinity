@@ -3,6 +3,7 @@ package kosogroup.infinity.thread;
 import kosogroup.infinity.InfinityConnection;
 import kosogroup.infinity.dto.IDataDTO;
 
+import java.io.IOException;
 import java.net.Socket;
 
 public abstract class ConnectionThread<T> extends Thread
@@ -37,7 +38,7 @@ public abstract class ConnectionThread<T> extends Thread
     @Override
     public abstract void run();
 
-    public abstract void sendData(IDataDTO iDataDTO);
+    public abstract void sendData(IDataDTO iDataDTO) throws IOException;
 
     public ConnectionThread newInstance()
     {
