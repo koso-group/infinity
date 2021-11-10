@@ -40,7 +40,7 @@ public class InfinityConnection
         return this._ConnectionDTO;
     }
 
-    public InfinityConnection sendData(IDataDTO iDataDTO)
+    public InfinityConnection sendData(IDataDTO iDataDTO) throws IOException
     {
         this._connectionThread.sendData(iDataDTO);
 
