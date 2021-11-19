@@ -11,6 +11,10 @@ public class InfinityConnection
     protected ConnectionThread _connectionThread;
     protected ConnectionDTO _ConnectionDTO;
 
+    private boolean _authorized = false;
+    public void setAuthorize(boolean state) { this._authorized = state; }
+    public boolean hasAuthorized() { return this._authorized; }
+
     public InfinityConnection() {}
 
     public InfinityConnection(ConnectionDTO connectionDTO) throws IOException
